@@ -11,6 +11,11 @@ import (
 	"helm.sh/helm/v3/pkg/getter"
 )
 
+/**
+* /v1/create-new-release [deployment, ]
+* 
+**/
+
 func main() {
 	// Set up the Helm environment
 	settings := cli.New()
@@ -36,7 +41,20 @@ func main() {
 	// Create an install action
 	client := action.NewInstall(actionConfig)
 	client.ReleaseName = "my-release"
+
 	client.Namespace = settings.Namespace()
+
+	// // Set custom values
+	// valueOpts := &values.Options{
+	//     ValueFiles: []string{"values.yaml"}, // Path to your values file
+	// }
+	// p := getter.All(settings)
+
+	// vals, err := valueOpts.MergeValues(p)
+	// if err != nil {
+	//     fmt.Printf("Error merging values: %v", err)
+	//     return
+	// }
 
 	// Set values if needed
 	valueOpts := &values.Options{}
