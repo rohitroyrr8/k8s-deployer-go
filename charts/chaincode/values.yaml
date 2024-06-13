@@ -1,0 +1,11 @@
+name: enoc-chaintest01-cc
+namespace: default
+port: 7052
+replicaCount: 1
+svc:
+  name: en-chaintest01
+  portName: encc01
+chaincodeName: chaintest01
+repository: 827830277284.dkr.ecr.me-south-1.amazonaws.com/chaintest01:v3.0
+pullPolicy: Always
+CCID: chaintest01:3f4db731f835d6428ef4ed24f424edb59112cbb3dec37ef243d5c81b7bc42eb9
