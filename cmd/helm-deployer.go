@@ -13,10 +13,10 @@ import (
 
 /**
 * /v1/create-new-release [deployment, ]
-* 
+*
 **/
 
-func main() {
+func mains() {
 	// Set up the Helm environment
 	settings := cli.New()
 
